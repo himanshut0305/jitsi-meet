@@ -3,9 +3,11 @@ import { combineReducers } from 'redux';
 import { CONFERENCE_FAILED, CONFERENCE_LEFT } from '../conference/actionTypes';
 import { ReducerRegistry } from '../redux';
 import { TRACK_REMOVED } from '../tracks/actionTypes';
+import { pinLocalParticipant } from './actions';
 
 import {
     CAPTURE_SCREENSHOT,
+    PIN_LOCAL_PARTICIPANT,
     SET_AUDIO_AVAILABLE,
     SET_AUDIO_MUTED,
     SET_CAMERA_FACING_MODE,
@@ -142,6 +144,9 @@ function _video(state = _VIDEO_INITIAL_MEDIA_STATE, action) {
             ...state,
             facingMode: cameraFacingMode
         };
+    }
+    case PIN_LOCAL_PARTICIPANT:{
+        return pinLocalParticipant()
     }
     case CAPTURE_SCREENSHOT:{
         return _takeScreenshot(state, action)

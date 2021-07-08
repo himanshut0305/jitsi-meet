@@ -12,6 +12,10 @@ public class BroadcastIntentHelper {
     public static Intent buildToggleCameraIntent() {
         return new Intent(BroadcastAction.Type.TOGGLE_CAMERA_FACING_MODE.getAction());
     }
+    
+    public static Intent pinLocalParticipantIntent() {
+        return new Intent(BroadcastAction.Type.PIN_LOCAL_PARTICIPANT.getAction());
+    }
 
     public static Intent buildCaptureScreenshotIntent() {
         return new Intent(BroadcastAction.Type.CAPTURE_SCREENSHOT.getAction());

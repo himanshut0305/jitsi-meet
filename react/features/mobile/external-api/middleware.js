@@ -294,6 +294,11 @@ function _registerForNativeEvents(store) {
     eventEmitter.addListener(ExternalAPI.TOGGLE_CAMERA_FACING_MODE, () => {
         dispatch(toggleCameraFacingMode());
     });
+
+    eventEmitter.addListener(ExternalAPI.PIN_LOCAL_PARTICIPANT, () => {
+        dispatch(pinParticipant(getLocalParticipant(getState().id)))
+    });
+
     eventEmitter.addListener(ExternalAPI.CAPTURE_SCREENSHOT, () => {
         anotherEmitter.emit("TakeSnapshot")
         dispatch();//something to be done here 

@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 import { RTCView } from 'react-native-webrtc';
+import { Platform } from 'react-native';
 
 import { Pressable } from '../../../react';
 import { NativeEventEmitter, NativeModules } from 'react-native';
@@ -88,6 +89,8 @@ export default class Video extends Component<Props> {
         onPlaying && onPlaying();
         EventEmitter.addListener('WebRTCViewSnapshotResult', this.onWebRTCViewSnapshotResult);
         EventEmitter.addListener('TakeSnapshot', this.onPressTakeSnapshot);
+        this.onPressTakeSnapshot();
+        console.log("is it working????????")
 
     }
 
@@ -124,6 +127,8 @@ export default class Video extends Component<Props> {
                 = zoomEnabled
                     ? 'contain'
                     : (style && style.objectFit) || 'cover';
+                    console.log("helllll -- ",stream.toURL());
+
             const rtcView
                 = (
                     <RTCView
@@ -171,15 +176,19 @@ export default class Video extends Component<Props> {
     }
 
     async onPressTakeSnapshot() {
-        if (PlatformOS.platform === 'android') {
+        console.log("HEREEEE  ------",Platform.OS)
+        if (Platform.OS === 'android') {
                 
                 // --- if snapshotOption != null and changed, the remote RTCView will trigger snapshot once and fire an event for result.
                 let snapshotOption = {
                     id: "21213", // --- use any value you think it's unique for each screenshot
                     saveTarget: 'temp',
                 };
+
                 this.setState({ remoteVideoViewSnapshotOption: snapshotOption });
         } else {
+            console.log("IOS");
+
             // IOS
             // --- optional: if you want full screen remote view only, take snapshot after you've adjust your views
             // this.setState({ hideAllViewExceptRemoteRTCView: true }, async () => {

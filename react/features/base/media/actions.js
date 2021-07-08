@@ -10,7 +10,8 @@ import {
     SET_VIDEO_MUTED,
     STORE_VIDEO_TRANSFORM,
     TOGGLE_CAMERA_FACING_MODE,
-    CAPTURE_SCREENSHOT
+    CAPTURE_SCREENSHOT,
+    PIN_LOCAL_PARTICIPANT
 } from './actionTypes';
 import {
     CAMERA_FACING_MODE,
@@ -156,6 +157,12 @@ export function storeVideoTransform(streamId: string, transform: Object) {
 export function toggleCameraFacingMode() {
     return {
         type: TOGGLE_CAMERA_FACING_MODE
+    };
+}
+
+export function pinLocalParticipant() {
+    return {
+        type: PIN_LOCAL_PARTICIPANT
     };
 }
 export function captureScreenShot() {

@@ -12,7 +12,9 @@ import {
     SET_VIDEO_MUTED,
     VIDEO_MUTISM_AUTHORITY,
     TOGGLE_CAMERA_FACING_MODE,
-    toggleCameraFacingMode
+    toggleCameraFacingMode,
+    PIN_LOCAL_PARTICIPANT,
+    pinLocalParticipant
 } from '../media';
 import { MiddlewareRegistry } from '../redux';
 
@@ -36,6 +38,7 @@ import {
 } from './functions';
 
 import './subscriber';
+import { getLocalParticipant, pinParticipant } from '../participants';
 
 declare var APP: Object;
 
@@ -132,6 +135,8 @@ MiddlewareRegistry.register(store => next => action => {
         }
         break;
     }
+    case PIN_LOCAL_PARTICIPANT:
+        store.dispatch(pinParticipant(getLocalParticipant(getState().id)))
 
     case TOGGLE_SCREENSHARING:
         if (typeof APP === 'object') {
