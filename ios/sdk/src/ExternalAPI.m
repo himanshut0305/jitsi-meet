@@ -21,6 +21,7 @@
 static NSString * const hangUpAction = @"org.jitsi.meet.HANG_UP";
 static NSString * const setAudioMutedAction = @"org.jitsi.meet.SET_AUDIO_MUTED";
 static NSString * const toggleCameraAction = @"org.jitsi.meet.TOGGLE_CAMERA_FACING_MODE";
+static NSString * const pinLocalParticipant = @"org.jitsi.meet.PIN_LOCAL_PARTICIPANT";
 static NSString * const sendEndpointTextMessageAction = @"org.jitsi.meet.SEND_ENDPOINT_TEXT_MESSAGE";
 static NSString * const toggleScreenShareAction = @"org.jitsi.meet.TOGGLE_SCREEN_SHARE";
 static NSString * const retrieveParticipantsInfoAction = @"org.jitsi.meet.RETRIEVE_PARTICIPANTS_INFO";
@@ -45,6 +46,7 @@ RCT_EXPORT_MODULE();
         @"HANG_UP": hangUpAction,
         @"SET_AUDIO_MUTED" : setAudioMutedAction,
         @"TOGGLE_CAMERA_FACING_MODE" : toggleCameraAction,
+        @"PIN_LOCAL_PARTICIPANT" : pinLocalParticipant,
         @"SEND_ENDPOINT_TEXT_MESSAGE": sendEndpointTextMessageAction,
         @"TOGGLE_SCREEN_SHARE": toggleScreenShareAction,
         @"RETRIEVE_PARTICIPANTS_INFO": retrieveParticipantsInfoAction,
@@ -76,7 +78,8 @@ RCT_EXPORT_MODULE();
               closeChatAction,
               sendChatMessageAction,
               setVideoMutedAction,
-              toggleCameraAction
+              toggleCameraAction,
+              pinLocalParticipant
     ];
 }
 
@@ -160,6 +163,10 @@ RCT_EXPORT_METHOD(sendEvent:(NSString *)name
 
 - (void)sendtoggleCameraAction {
     [self sendEventWithName:toggleCameraAction body:nil];
+}
+
+- (void)pinLocalParticipant {
+    [self sendEventWithName:pinLocalParticipant body:nil];
 }
 
 - (void)sendEndpointTextMessage:(NSString*)message :(NSString*)to {

@@ -92,6 +92,9 @@
 
 - (void)toggleCameraAction:(NSDictionary *)data;
 
+- (void)pinLocalParticipant:(NSDictionary *)data;
+
+
 
 /**
  * Called when a chat message is received.

@@ -20,6 +20,7 @@
 
 - (void)sendHangUp;
 - (void)sendtoggleCameraAction;
+- (void)pinLocalParticipant;
 - (void)sendSetAudioMuted:(BOOL)muted;
 - (void)sendEndpointTextMessage:(NSString*)message :(NSString*)to;
 - (void)toggleScreenShare:(BOOL)enabled;

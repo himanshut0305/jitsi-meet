@@ -217,13 +217,13 @@ function _mapDispatchToProps(dispatch: Function, ownProps): Object {
          * @returns {void}
          */
         _onClick() {
-            const { participant, tileView } = ownProps;
+            // const { participant, tileView } = ownProps;
 
-            if (tileView) {
-                dispatch(toggleToolboxVisible());
-            } else {
-                dispatch(pinParticipant(participant.pinned ? null : participant.id));
-            }
+            // if (tileView) {
+            //     dispatch(toggleToolboxVisible());
+            // } else {
+            //     dispatch(pinParticipant(participant.pinned ? null : participant.id));
+            // }
         },
 
         /**
@@ -232,17 +232,17 @@ function _mapDispatchToProps(dispatch: Function, ownProps): Object {
          * @returns {void}
          */
         _onThumbnailLongPress() {
-            const { participant } = ownProps;
+            // const { participant } = ownProps;
 
-            if (participant.local) {
-                dispatch(openDialog(ConnectionStatusComponent, {
-                    participantID: participant.id
-                }));
-            } else {
-                dispatch(openDialog(RemoteVideoMenu, {
-                    participant
-                }));
-            }
+            // if (participant.local) {
+            //     dispatch(openDialog(ConnectionStatusComponent, {
+            //         participantID: participant.id
+            //     }));
+            // } else {
+            //     dispatch(openDialog(RemoteVideoMenu, {
+            //         participant
+            //     }));
+            // }
         }
     };
 }
