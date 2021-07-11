@@ -102,10 +102,7 @@ class Filmstrip extends Component<Props> {
                     showsHorizontalScrollIndicator = { false }
                     showsVerticalScrollIndicator = { false }
                     style = { styles.scrollView } >
-                    {
-                        !this._separateLocalThumbnail && !isNarrowAspectRatio
-                            && <LocalThumbnail />
-                    }
+                    
                     {
 
                         this._sort(_participants, isNarrowAspectRatio)
@@ -115,15 +112,9 @@ class Filmstrip extends Component<Props> {
                                     participant = { p } />))
 
                     }
-                    {
-                        !this._separateLocalThumbnail && isNarrowAspectRatio
-                            && <LocalThumbnail />
-                    }
+
                 </ScrollView>
-                {
-                    this._separateLocalThumbnail && isNarrowAspectRatio
-                        && <LocalThumbnail />
-                }
+
             </SafeAreaView>
         );
     }

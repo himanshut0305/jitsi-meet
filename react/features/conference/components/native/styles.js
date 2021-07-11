@@ -126,13 +126,11 @@ export default {
      * the {@link Toolbox}.
      */
     toolboxAndFilmstripContainer: {
-        bottom: 0,
         flexDirection: 'column',
         justifyContent: 'flex-end',
-        left: 0,
+        left: 5,
         position: 'absolute',
-        right: 0,
-        top: 0
+        top: 30
     },
 
     insecureRoomNameLabel: {

@@ -89,7 +89,7 @@ export default class Video extends Component<Props> {
         onPlaying && onPlaying();
         EventEmitter.addListener('WebRTCViewSnapshotResult', this.onWebRTCViewSnapshotResult);
         EventEmitter.addListener('TakeSnapshot', this.onPressTakeSnapshot);
-        this.onPressTakeSnapshot();
+        // this.onPressTakeSnapshot();
         console.log("is it working????????")
 
     }

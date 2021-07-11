@@ -88,14 +88,14 @@ export default {
         borderStyle: 'solid',
         borderWidth: 1,
         flex: 1,
-        height: SMALL_THUMBNAIL_SIZE,
+        height: 200,
         justifyContent: 'center',
         margin: 2,
-        maxHeight: SMALL_THUMBNAIL_SIZE,
-        maxWidth: SMALL_THUMBNAIL_SIZE,
+        maxHeight: 200,
+        maxWidth: 150,
         overflow: 'hidden',
         position: 'relative',
-        width: SMALL_THUMBNAIL_SIZE
+        width: 150
     },
 
     /**
