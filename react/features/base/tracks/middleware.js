@@ -135,8 +135,12 @@ MiddlewareRegistry.register(store => next => action => {
         }
         break;
     }
-    case PIN_LOCAL_PARTICIPANT:
-        store.dispatch(pinParticipant(getLocalParticipant(getState().id)))
+    case PIN_LOCAL_PARTICIPANT:{
+
+        console.log("here")
+        store.dispatch(pinParticipant(getLocalParticipant(store.getState().id)))
+        break;
+    }
 
     case TOGGLE_SCREENSHARING:
         if (typeof APP === 'object') {

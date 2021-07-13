@@ -39,6 +39,7 @@
 - (void)hangUp;
 - (void)setAudioMuted:(BOOL)muted;
 - (void)toggleCamera;
+- (void)pinLocalParticipant;
 - (void)sendEndpointTextMessage:(NSString * _Nonnull)message :(NSString * _Nullable)to;
 - (void)toggleScreenShare:(BOOL)enabled;
 - (void)retrieveParticipantsInfo:(void (^ _Nonnull)(NSArray * _Nullable))completionHandler;

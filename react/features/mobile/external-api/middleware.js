@@ -38,6 +38,7 @@ import { muteLocal } from '../../video-menu/actions';
 import { ENTER_PICTURE_IN_PICTURE } from '../picture-in-picture';
 
 import { setParticipantsWithScreenShare } from './actions';
+import { pinParticipant,getLocalParticipant } from '../../base/participants';
 import { sendEvent } from './functions';
 import logger from './logger';
 
@@ -296,7 +297,9 @@ function _registerForNativeEvents(store) {
     });
 
     eventEmitter.addListener(ExternalAPI.PIN_LOCAL_PARTICIPANT, () => {
-        dispatch(pinParticipant(getLocalParticipant(getState().id)))
+        console.log("here11111")
+        // dispatch(pinLocalParticipant());
+        dispatch(pinParticipant(getLocalParticipant(getState()).id))
     });
 
     eventEmitter.addListener(ExternalAPI.CAPTURE_SCREENSHOT, () => {
